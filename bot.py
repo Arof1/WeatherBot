@@ -68,7 +68,7 @@ def voice_message(message):
         file_data = bot.download_file(file_path)
         with open('voice_message.ogg', 'wb') as audio_file:
             audio_file.write(file_data)
-        text = audio_to_text('voice_message.ogg')
+        text = ''.join(audio_to_text('voice_message.ogg'))
         nlp = spacy.load('ru_core_news_lg')
         doc = nlp(text)
         try:
