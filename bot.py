@@ -69,7 +69,6 @@ def voice_message(message):
         with open('voice_message.ogg', 'wb') as audio_file:
             audio_file.write(file_data)
         text = ''.join(audio_to_text('voice_message.ogg'))
-        nlp = spacy.load('ru_core_news_lg')
         doc = nlp(text)
         try:
             coordinates = city_to_coordinates(doc.ents[0])
@@ -91,4 +90,5 @@ def voice_message(message):
 
 # BOT START
 print('Bot ready and listen commands...')
+nlp = spacy.load('ru_core_news_lg')
 bot.polling()
