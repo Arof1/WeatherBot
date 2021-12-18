@@ -1,0 +1,4 @@
+SpeechRecognition
+pyTelegramBotAPI
+requests
+spacy
